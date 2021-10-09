@@ -26,13 +26,10 @@ public class Blood {
 	@OneToMany
 	private Set<Donor> donors;
 	
+	public Blood() {}
+	
 	public Blood(String bloodGroup) {
 		this.bloodGroup = bloodGroup;
-	}
-	
-	public Blood(String bloodGroup, double unitsAvailable) {
-		this.bloodGroup = bloodGroup;
-		this.unitsAvailable = unitsAvailable;
 	}
 
 	public String getBloodGroup() {
