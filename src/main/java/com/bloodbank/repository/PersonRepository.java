@@ -3,9 +3,9 @@ package com.bloodbank.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.bloodbank.entity.Blood;
+import com.bloodbank.entity.Person;
 
 @Repository
-public interface BloodRepository extends JpaRepository<Blood, String> {
+public interface PersonRepository extends JpaRepository<Person, String> {
 
 }

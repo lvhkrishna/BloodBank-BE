@@ -24,7 +24,7 @@ public class Blood {
 	@ColumnDefault("0")
 	private double unitsAvailable;
 	@OneToMany
-	private Set<Donor> donors;
+	private Set<Person> people;
 	
 	public Blood() {}
 	
@@ -48,12 +48,12 @@ public class Blood {
 		this.unitsAvailable = unitsAvailable;
 	}
 
-	public Set<Donor> getDonors() {
-		return donors;
+	public Set<Person> getPeople() {
+		return people;
 	}
 
-	public void setDonors(Set<Donor> donors) {
-		this.donors = donors;
+	public void setPeople(Set<Person> people) {
+		this.people = people;
 	}
 	
 }
