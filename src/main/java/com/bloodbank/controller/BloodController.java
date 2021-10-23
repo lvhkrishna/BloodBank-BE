@@ -17,6 +17,7 @@ public class BloodController {
 	@Autowired
 	private BloodService bloodService;
 	
+//	@CrossOrigin("http://localhost:3000/")
 	@GetMapping("/blood")
 	public List<Blood> getAll() {
 		return bloodService.getAllBloodGroups();
