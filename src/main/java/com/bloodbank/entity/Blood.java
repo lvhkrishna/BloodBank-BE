@@ -1,11 +1,8 @@
 package com.bloodbank.entity;
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -16,15 +13,13 @@ import org.hibernate.annotations.ColumnDefault;
 public class Blood {
 
 	@Id
-	@Column(name = "blood_group", unique = true)
+	@Column(name = "blood_group", length = 5, unique = true)
 	@NotNull
 	private String bloodGroup;
 	@Column(name = "units_available")
 	@NotNull
 	@ColumnDefault("0")
 	private double unitsAvailable;
-	@OneToMany
-	private Set<Person> people;
 	
 	public Blood() {}
 	
@@ -46,14 +41,6 @@ public class Blood {
 
 	public void setUnitsAvailable(double unitsAvailable) {
 		this.unitsAvailable = unitsAvailable;
-	}
-
-	public Set<Person> getPeople() {
-		return people;
-	}
-
-	public void setPeople(Set<Person> people) {
-		this.people = people;
 	}
 	
 }
