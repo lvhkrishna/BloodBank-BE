@@ -7,11 +7,19 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedStoredProcedureQueries;
+import javax.persistence.NamedStoredProcedureQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "donor")
+@NamedStoredProcedureQueries({
+	   @NamedStoredProcedureQuery(name = "getEligibleDonors", 
+							       procedureName = "getEligibleDonors",
+							       resultClasses = {Donor.class}
+			   					)
+	})
 public class Donor {
 	
 	@Id
@@ -74,6 +82,14 @@ public class Donor {
 
 	public void setDob(Date dob) {
 		this.dob = dob;
+	}
+
+	public Blood getBloodGroup() {
+		return bloodGroup;
+	}
+
+	public void setBloodGroup(Blood bloodGroup) {
+		this.bloodGroup = bloodGroup;
 	}
 	
 }
